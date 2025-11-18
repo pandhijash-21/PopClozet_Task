@@ -81,9 +81,7 @@ Bonus points for:
 - If you add third-party packages, explain why in the PR.
 - If you break the build, include steps to reproduce and how to run locally.
 
-## Contact / Questions
 
-If you have any questions about the assignment, reach out to your mentor or the assignment owner (add contact details here).
 
 ---
 
