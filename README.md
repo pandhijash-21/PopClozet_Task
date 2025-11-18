@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# PopClozet — Intern Assignment (Round 2)
 
-## Project info
+## Overview
 
-**URL**: https://lovable.dev/projects/ef11a2eb-c745-41d5-8c5e-fb9ffe5e4f59
+This repository is a starter codebase for the Round-2 intern assignment. The goal for interns is to improve and customize the landing page, then deploy their finished repository to Vercel and submit a PR with a live URL.
 
-## How can I edit this code?
+The codebase already contains a Vite + React + TypeScript app with Tailwind CSS and shadcn-ui components. Your task is to iterate on the UI/UX, add improvements, and show polish in both design and code quality.
 
-There are several ways of editing your application.
+## Goals
 
-**Use Lovable**
+- Improve the landing page visuals and copy.
+- Ensure responsive behavior across common screen sizes (mobile, tablet, desktop).
+- Improve accessibility (semantic HTML, keyboard navigation, alt text, color contrast).
+- Optimize basic performance (images, font loading, bundle size awareness).
+- Deploy the final site to Vercel and include the live URL in your submission.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ef11a2eb-c745-41d5-8c5e-fb9ffe5e4f59) and start prompting.
+## Getting started (local development)
 
-Changes made via Lovable will be committed automatically to this repo.
+Open a PowerShell terminal and run:
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```powershell
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+- `npm run dev` starts the Vite development server (hot reload).
+- Use `npm run build` to produce a production build and `npm run preview` to preview the build locally.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Development notes
 
-**Use GitHub Codespaces**
+- This project uses TypeScript and React. Keep type-safety in mind when changing components.
+- UI primitives live in `src/components/ui/` and higher-level components in `src/components/`.
+- Utility functions are in `src/lib/` and hooks in `src/hooks/`.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment — Vercel (recommended)
 
-## What technologies are used for this project?
+Use Vercel for deployment (free for student/individual projects). Basic steps:
 
-This project is built with:
+1. Push your changes to GitHub (on a feature branch).
+2. Create a Vercel account and link your GitHub repository.
+3. In Vercel, import the project and accept defaults — Vercel auto-detects Vite apps.
+4. Configure environment variables if needed (none required by default).
+5. Deploy; Vercel will provide a live URL (e.g., `https://your-app.vercel.app`).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Tip: You can also add a `vercel.json` for custom build settings, but it's not required for this assignment.
 
-## How can I deploy this project?
+## Submission instructions
 
-Simply open [Lovable](https://lovable.dev/projects/ef11a2eb-c745-41d5-8c5e-fb9ffe5e4f59) and click on Share -> Publish.
+- Create a branch using this naming convention: `feature/<your-name>-landing` (e.g., `feature/alex-landing`).
+- Commit your changes and push the branch to GitHub.
+- Open a Pull Request (PR) against `main` with a short description of your changes.
+- In the PR description include:
+	- The live Vercel deployment URL.
+	- A short list of key changes and files touched.
+	- Any instructions to review (e.g., login details if you added a demo account).
 
-## Can I connect a custom domain to my Lovable project?
+Optional: Add screenshots or a short GIF to the PR to showcase the UX improvements.
 
-Yes, you can!
+## Evaluation rubric
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Work will be evaluated on the following criteria:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Design & Visuals:** Cohesive visual language, typography, spacing, imagery.
+- **Responsiveness:** Site functions and looks good on mobile/tablet/desktop.
+- **Accessibility:** Semantic HTML, keyboard navigation, aria attributes where appropriate, color contrast.
+- **Code Quality:** Readable, maintainable code, meaningful commits, and sensible component structure.
+- **Performance:** Reasonable bundle size, optimized images, efficient rendering.
+
+Bonus points for:
+
+- Meaningful animations or micro-interactions that improve perceived quality.
+- Tests (unit or integration) for critical components.
+- Automated formatting / linting (configured `prettier` / `eslint`).
+
+## Helpful tips & expectations
+
+- Keep commits small and focused; use descriptive commit messages.
+- Avoid committing large generated assets; prefer optimized images.
+- If you add third-party packages, explain why in the PR.
+- If you break the build, include steps to reproduce and how to run locally.
+
+## Contact / Questions
+
+If you have any questions about the assignment, reach out to your mentor or the assignment owner (add contact details here).
+
+---
+
+Good luck — we look forward to seeing creative improvements and solid engineering!
