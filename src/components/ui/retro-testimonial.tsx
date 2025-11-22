@@ -26,13 +26,14 @@ export const TestimonialCard = ({
 
   return (
     <div className="w-full px-4">
-      <div className="relative bg-card rounded-2xl p-8 shadow-card hover:shadow-soft transition-all duration-300">
+      <div className="relative bg-card rounded-2xl p-8 shadow-card hover:shadow-soft transition-all duration-500 hover:-translate-y-2 border border-border/50 hover:border-primary/30 group overflow-hidden">
         {backgroundImage && (
           <div
             className="absolute inset-0 opacity-5 rounded-2xl bg-cover bg-center"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
         )}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:via-primary/3 group-hover:to-primary/5 transition-all duration-500 rounded-2xl"></div>
         
         <div className="relative z-10 space-y-6">
           {/* Rating */}

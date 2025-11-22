@@ -129,6 +129,7 @@ export default {
         third: "third 18s ease-in-out infinite",
         fourth: "fourth 22s ease-in-out infinite",
         fifth: "fifth 25s ease-in-out infinite",
+        "spin-slow": "spin 8s linear infinite",
       },
     },
   },
