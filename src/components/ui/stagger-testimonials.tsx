@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -134,11 +134,11 @@ interface TestimonialCardProps {
   cardSize: number;
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ 
-  position, 
-  testimonial, 
-  handleMove, 
-  cardSize 
+const TestimonialCard: React.FC<TestimonialCardProps> = ({
+  position,
+  testimonial,
+  handleMove,
+  cardSize
 }) => {
   const isCenter = position === 0;
 
@@ -147,8 +147,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       onClick={() => handleMove(position)}
       className={cn(
         "absolute left-1/2 top-1/2 cursor-pointer border-2 p-8 transition-all duration-500 ease-in-out",
-        isCenter 
-          ? "z-10 bg-primary text-primary-foreground border-primary" 
+        isCenter
+          ? "z-10 bg-primary text-primary-foreground border-primary"
           : "z-0 bg-card text-card-foreground border-border hover:border-primary/50"
       )}
       style={{
@@ -188,7 +188,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         "{testimonial.testimonial}"
       </h3>
       <p className={cn(
-        "absolute bottom-8 left-8 right-8 mt-2 text-sm italic",
+        "absolute mt-2 italic transition-all duration-300",
+        // Mobile styles
+        "top-2 right-16 text-right text-xs max-w-[60%]",
+        // Desktop styles
+        "sm:bottom-8 sm:left-8 sm:right-8 sm:top-auto sm:text-left sm:text-sm sm:max-w-none",
         isCenter ? "text-primary-foreground/80" : "text-muted-foreground"
       )}>
         - {testimonial.by}
@@ -201,6 +205,7 @@ export const StaggerTestimonials: React.FC = () => {
   const [cardSize, setCardSize] = useState(365);
   const [testimonialsList, setTestimonialsList] = useState(testimonials);
   const [isPaused, setIsPaused] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMove = useCallback((steps: number) => {
     setIsPaused(true);
@@ -221,9 +226,12 @@ export const StaggerTestimonials: React.FC = () => {
       }
       return newList;
     });
-    
+
     // Resume auto-rotation after 5 seconds of inactivity
-    setTimeout(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
       setIsPaused(false);
     }, 5000);
   }, []);
