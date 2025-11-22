@@ -2,12 +2,12 @@ import { Instagram, Linkedin, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-8 md:py-12 px-4 bg-background border-t border-border">
+    <footer className="py-8 md:py-12 px-4 bg-gradient-to-b from-background to-background/95 border-t border-border/50">
       <div className="container mx-auto max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
           {/* Left Side - Logo & Copyright */}
           <div className="space-y-3 text-center md:text-left">
-            <div className="text-headline font-bold text-2xl tracking-tight">
+            <div className="text-headline font-bold text-2xl tracking-tight bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Popclozet
             </div>
             <p className="text-sm text-muted-foreground">
@@ -24,24 +24,24 @@ const Footer = () => {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-colors"
+                className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md group"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 text-headline" />
+                <Instagram className="w-5 h-5 text-headline group-hover:text-primary transition-colors" />
               </a>
               <a
                 href="#"
-                className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-colors"
+                className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md group"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5 text-headline" />
+                <Linkedin className="w-5 h-5 text-headline group-hover:text-primary transition-colors" />
               </a>
               <a
                 href="#"
-                className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-colors"
+                className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-muted hover:bg-primary/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-md group"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5 text-headline" />
+                <Facebook className="w-5 h-5 text-headline group-hover:text-primary transition-colors" />
               </a>
             </div>
 

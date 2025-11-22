@@ -83,26 +83,26 @@ const SyntheticHero = ({
         <div className="container mx-auto px-4 py-20 md:py-24 pt-24 md:pt-32">
           <div className="flex flex-col lg:flex-row gap-8 md:gap-16 items-center max-w-7xl mx-auto">
           {/* Content Column */}
-          <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 text-center lg:text-left">
+          <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 text-center lg:text-left animate-in fade-in slide-in-from-bottom-8 duration-1000">
             {badgeText && (
-              <Badge variant="secondary" className="inline-flex gap-2 px-4 py-2 text-sm">
+              <Badge variant="secondary" className="inline-flex gap-2 px-4 py-2 text-sm animate-in fade-in slide-in-from-left-4 duration-700 delay-100">
                 {badgeLabel && <span className="font-medium">{badgeLabel}:</span>}
                 {badgeText}
               </Badge>
             )}
 
             <div className="space-y-4 md:space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#1a1a1a] leading-[1.1] tracking-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.3)]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#1a1a1a] leading-[1.1] tracking-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.3)] animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
                 {title}
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#2d2d2d] max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-[0_1px_5px_rgba(255,255,255,0.2)]">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#2d2d2d] max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-[0_1px_5px_rgba(255,255,255,0.2)] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
                 {description}
               </p>
             </div>
 
             {/* Email Capture or CTA Buttons */}
             {showEmailCapture ? (
-              <form onSubmit={handleSubmit} className="space-y-4 w-full">
+              <form onSubmit={handleSubmit} className="space-y-4 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
                 <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto lg:mx-0">
                   <Input
                     type="email"
@@ -110,12 +110,12 @@ const SyntheticHero = ({
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="flex-1 min-h-[48px] h-12 md:h-14 text-base md:text-lg bg-white/95 backdrop-blur-sm border-white/20 focus:border-white text-headline placeholder:text-muted-foreground px-4"
+                    className="flex-1 min-h-[48px] h-12 md:h-14 text-base md:text-lg bg-white/95 backdrop-blur-sm border-2 border-white/30 focus:border-primary focus:ring-2 focus:ring-primary/20 text-headline placeholder:text-muted-foreground px-4 rounded-xl transition-all duration-300 hover:border-primary/50"
                   />
                   <Button
                     type="submit"
                     size="lg"
-                    className="min-h-[48px] h-12 md:h-14 px-6 md:px-8 bg-[#1a1a1a] text-white hover:bg-[#2d2d2d] font-medium shadow-lg transition-all hover:shadow-xl hover:scale-105 w-full sm:w-auto"
+                    className="min-h-[48px] h-12 md:h-14 px-6 md:px-8 bg-gradient-to-r from-[#1a1a1a] to-[#2d2d2d] text-white hover:from-[#2d2d2d] hover:to-[#1a1a1a] font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95 w-full sm:w-auto rounded-xl"
                   >
                     {emailButtonText}
                   </Button>
@@ -146,14 +146,16 @@ const SyntheticHero = ({
 
           {/* Image Column */}
           {heroImage && (
-            <div className="w-full lg:w-1/2 relative h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[700px] rounded-2xl md:rounded-3xl overflow-hidden shadow-soft">
-              <div className="absolute inset-0 bg-gradient-to-t from-headline/20 to-transparent z-10" />
+            <div className="w-full lg:w-1/2 relative h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[700px] rounded-2xl md:rounded-3xl overflow-hidden shadow-soft animate-in fade-in slide-in-from-right-12 duration-1000 delay-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-headline/20 via-transparent to-transparent z-10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 z-10" />
               <img
                 src={heroImage}
                 alt="Hero visual showcasing trendy fashion outfits"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out"
                 loading="eager"
               />
+              <div className="absolute inset-0 border-2 border-primary/20 rounded-2xl md:rounded-3xl z-10 pointer-events-none"></div>
             </div>
           )}
         </div>
